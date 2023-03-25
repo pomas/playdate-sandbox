@@ -7,12 +7,18 @@ local gfx <const> = playdate.graphics
 local playerSprite = nil
 
 
+local kralicekLeft = gfx.image.new("Images/kralicekright")
+local kralicekRight = gfx.image.new("Images/kralicekleft")
+assert( kralicekLeft )
+assert( kralicekRight )
+
+
+
 function myGameSetUp()
 
-    local playerImage = gfx.image.new("Images/kralicekanim")
-    assert( playerImage )
-
-    playerSprite = gfx.sprite.new( playerImage )
+    
+    
+    playerSprite = gfx.sprite.new( kralicekLeft )
     playerSprite:setImageDrawMode(playdate.graphics.kDrawModeWhiteTransparent)
     playerSprite:moveTo( 200, 120 ) 
     playerSprite:add()
@@ -36,14 +42,17 @@ function playdate.update()
 
     if playdate.buttonIsPressed( playdate.kButtonUp ) then
         playerSprite:moveBy( 0, -2 )
+        
     end
     if playdate.buttonIsPressed( playdate.kButtonRight ) then
+        playerSprite:setImage(kralicekRight)
         playerSprite:moveBy( 2, 0 )
     end
     if playdate.buttonIsPressed( playdate.kButtonDown ) then
         playerSprite:moveBy( 0, 2 )
     end
     if playdate.buttonIsPressed( playdate.kButtonLeft ) then
+        playerSprite:setImage(kralicekLeft)
         playerSprite:moveBy( -2, 0 )
     end
 
