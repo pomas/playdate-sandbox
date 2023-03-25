@@ -11,9 +11,11 @@ local kralicekMoves = 1
 local kralicekLeft = gfx.image.new("Images/kralicekright")
 local kralicekRight = gfx.image.new("Images/kralicekleft")
 local kralicekRight2 = gfx.image.new("Images/kralicekright2")
-assert( kralicekLeft )
+local kralicekLeft2 = gfx.image.new("Images/kralicekleft2")
 assert( kralicekRight )
 assert( kralicekRight2 )
+assert( kralicekLeft )
+assert( kralicekLeft2 )
 
 
 
@@ -61,7 +63,14 @@ function playdate.update()
         playerSprite:moveBy( 0, 2 )
     end
     if playdate.buttonIsPressed( playdate.kButtonLeft ) then
-        playerSprite:setImage(kralicekLeft)
+        if(kralicekMoves == 1) then 
+            playerSprite:setImage(kralicekLeft)
+            kralicekMoves = 0
+        else 
+            playerSprite:setImage(kralicekLeft2)
+            kralicekMoves = 1
+        end
+       
         playerSprite:moveBy( -2, 0 )
     end
 
