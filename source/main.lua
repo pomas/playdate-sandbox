@@ -9,7 +9,7 @@ local playerSprite = nil
 
 function myGameSetUp()
 
-    local playerImage = gfx.image.new("Images/playerImage")
+    local playerImage = gfx.image.new("Images/kralicekanim")
     assert( playerImage )
 
     playerSprite = gfx.sprite.new( playerImage )
