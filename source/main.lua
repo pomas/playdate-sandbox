@@ -18,6 +18,7 @@ function myGameSetUp()
 
     local backgroundImage = gfx.image.new( "Images/background" )
     assert( backgroundImage )
+    --tady si zkoušim komentář
 
     gfx.sprite.setBackgroundDrawingCallback(
             function( x, y, width, height )
