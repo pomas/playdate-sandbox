@@ -13,6 +13,7 @@ function myGameSetUp()
     assert( playerImage )
 
     playerSprite = gfx.sprite.new( playerImage )
+    playerSprite:setImageDrawMode(playdate.graphics.kDrawModeWhiteTransparent)
     playerSprite:moveTo( 200, 120 ) 
     playerSprite:add()
 
